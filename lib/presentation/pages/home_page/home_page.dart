@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../domain/repositories/category_repository';
 import '../../../domain/entities/category.dart';
 import '../../../data/repositories/category_repository_impl.dart';
 import '../../../domain/entities/failure.dart';
+import '../../../domain/repositories/category_repository.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

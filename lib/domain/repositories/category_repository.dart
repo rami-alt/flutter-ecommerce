@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'failure.dart';
-import 'category.dart';
+
+import '../entities/category.dart';
+import '../entities/failure.dart';
 
 abstract class CategoryRepository{
   Future<Either<Failure, List<Category>>> getCategories();

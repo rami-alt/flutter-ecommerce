@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:dartz/dartz.dart';
 import '../../domain/entities/failure.dart';
 import '../../domain/entities/category.dart';
-import '../../domain/repositories/category_repository';
+import '../../domain/repositories/category_repository.dart';
 
 class CategoryRepositoryImpl implements CategoryRepository {
   final String categoriesUrl = 'https://api.escuelajs.co/api/v1/categories';
