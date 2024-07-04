@@ -1,0 +1,7 @@
+import 'package:dartz/dartz.dart';
+import 'failure.dart';
+import 'category.dart';
+
+abstract class CategoryRepository{
+  Future<Either<Failure, List<Category>>> getCategories();
+}

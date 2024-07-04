@@ -6,20 +6,19 @@ class LoginController extends GetxController {
   final LoginUseCase loginUseCase;
 
   var isLoading = false.obs;
-  var user = Rx<User?>(null);
-  var errorMessage = ''.obs;
+  var user = User(email: "", accessToken: "", refreshToken: "").obs;
 
   LoginController(this.loginUseCase);
 
   Future<void> login(String email, String password) async {
-    try {
-      isLoading.value = true;
-      user.value = await loginUseCase.execute(email, password);
-      Get.offNamed('/signup'); // Navigate to the home screen on success
-    } catch (e) {
-      errorMessage.value = e.toString();
-    } finally {
-      isLoading.value = false;
-    }
+    final result = await loginUseCase.login(email, password);
+    result.fold(
+        (failure) => {
+          Get.snackbar('Error', failure.message)},
+        (user) => {
+              this.user.value = user,
+              Get.snackbar('Success', 'Login successful'),
+              Get.offAllNamed('/home')
+            });
   }
 }

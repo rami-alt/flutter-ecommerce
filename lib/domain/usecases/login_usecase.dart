@@ -1,3 +1,6 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter_application_1/domain/entities/failure.dart';
+
 import '../entities/user.dart';
 import '../repositories/login_repository.dart';
 
@@ -6,7 +9,7 @@ class LoginUseCase {
 
   LoginUseCase(this.repository);
 
-  Future<User> execute(String email, String password) async {
+  Future<Either<Failure,User>> login(String email, String password) async {
     return await repository.login(email, password);
   }
 }

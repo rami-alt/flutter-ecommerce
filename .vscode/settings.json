@@ -1,3 +1,4 @@
 {
-    "dart.flutterSdkPath": "C:\\users\\flutter\\flutter"
+    "dart.flutterSdkPath": "C:\\users\\flutter\\flutter",
+    "java.compile.nullAnalysis.mode": "disabled"
 }
