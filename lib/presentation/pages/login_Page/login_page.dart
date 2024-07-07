@@ -1,7 +1,5 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/presentation/controllers/login_controller.dart';
 import 'package:get/get.dart';
 
@@ -140,11 +138,11 @@ class _LoginPageState extends State<LoginPage> {
                       print('error');
                     }
                   },
-                  child: const Text('Login'),
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity,
                         50), // Set button width to match the parent
                   ),
+                  child: const Text('Login'),
                 );
               }),
               Row(

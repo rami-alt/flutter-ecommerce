@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
       home: const LogoPage(),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/login', page: ()=> LoginPage()),
-        GetPage(name: '/signup', page: ()=>SignupPage()),
-        GetPage(name: '/home', page: ()=>HomePage())
+        GetPage(name: '/login', page: ()=> const LoginPage()),
+        GetPage(name: '/signup', page: ()=>const SignupPage()),
+        GetPage(name: '/home', page: ()=>const HomePage())
 
       ],
     );
