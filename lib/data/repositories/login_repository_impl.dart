@@ -42,10 +42,26 @@ class LoginRepositoryImpl implements LoginRepository {
       } else {
         return Left(Failure(
             message:
-                'Failed to login with status code: ${response.statusCode}'));
+                'invalid credentials! Please check your email and password'));
       }
     } catch (e) {
       return Left(Failure(message: e.toString()));
     }
+  }
+
+  @override
+  Future<bool> isLoggedIn() async {
+    final email = await storage.read(key: 'email');
+    final password = await storage.read(key: 'password');
+    print("hiiii $email   $password");
+    return email != null && password != null;
+  }
+
+  @override
+  void logout() async {
+    await storage.delete(key: 'email');
+    await storage.delete(key: 'password');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('user');
   }
 }

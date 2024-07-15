@@ -9,7 +9,15 @@ class LoginUseCase {
 
   LoginUseCase(this.repository);
 
-  Future<Either<Failure,User>> login(String email, String password) async {
+  Future<Either<Failure, User>> login(String email, String password) async {
     return await repository.login(email, password);
+  }
+
+  Future<bool> isLoggedIn() {
+    return repository.isLoggedIn();
+  }
+
+  void logout() {
+    repository.logout();
   }
 }
